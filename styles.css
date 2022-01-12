@@ -1,0 +1,20 @@
+html{
+  text-align: center;
+}
+
+body {
+  color: white;
+  display: flex;
+  height: 70vh;
+}
+
+.player-1-section,
+.player-2-section {
+  background-color: black;
+  width: 33vh;
+}
+
+.game-section {
+  background-color: blue;
+  width: 33vh;
+}
