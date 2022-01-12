@@ -18,3 +18,61 @@ body {
   background-color: blue;
   width: 50vh;
 }
+
+.grid-section {
+
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  grid-gap: 0px;
+  justify-content: center;
+}
+.box{
+  height: 100px;
+  width: 100px;
+  /* border: solid red 1px; */
+}
+
+.box-1 {
+  border-right: solid red 2px;
+  border-bottom: solid red 2px;
+}
+
+.box-2{
+  border-right: solid red 2px;
+  border-bottom: solid red 2px;
+  border-left: solid red 2px;
+}
+
+.box-3{
+  border-left: solid red 2px;
+  border-bottom: solid red 2px;
+}
+.box-4 {
+  border-top: solid red 2px;
+  border-bottom: solid red 2px;
+  border-right: solid red 2px;
+}
+.box-5{
+  border: solid red 2px;
+}
+.box-6{
+  border-top: solid red 2px;
+  border-bottom: solid red 2px;
+  border-left: solid red 2px;
+}
+
+.box-7{
+  border-top: solid red 2px;
+  border-right: solid red 2px;
+}
+
+.box-8 {
+  border-left: solid red 2px;
+  border-top: solid red 2px;
+  border-right: solid red 2px;
+}
+
+.box-9 {
+  border-top: solid red 2px;
+  border-left: solid red 2px;
+}
