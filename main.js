@@ -40,7 +40,13 @@ function mark(e){
   }
 }
 
-
+function resetBoard(){
+  newGame.reset()
+    for (var i in boxes){
+      boxes[i].innerHTML = '';
+    }
+    winnerDraw.innerText = ``;
+  }
 
 function win(){
   if (!newGame.whosTurn){
@@ -52,4 +58,8 @@ function win(){
     winnerDraw.innerText = `Player ${newGame.player2.token} wins!`
 
   }
+}
+
+function draw(){
+
 }
