@@ -14,7 +14,22 @@ class Game {
                   0,0,0]
   }
 
+  makeMove(e) {
+      if (!this.whosTurn ) {
+        newGame.player1.play(e)
+        this.whosTurn += 1;
+        console.log(e.target.id)
+        console.log("player1")
+      }
+      else if (this.whosTurn)  {
+        newGame.player2.play(e)
+        this.whosTurn = 0;
+        console.log("player2")
+        console.log(e.target.id)
+      }
+  // console.log(newGame.board)
 
+    }
 
 
     // play(e, player){
