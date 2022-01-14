@@ -40,7 +40,7 @@ function mark(e){
   }
 }
 
-function resetBoard(){
+function displayReset(){
   newGame.reset()
     for (var i in boxes){
       boxes[i].innerHTML = '';
@@ -48,7 +48,7 @@ function resetBoard(){
     winnerDraw.innerText = ``;
   }
 
-function win(){
+function displayWin(){
   if (!newGame.whosTurn){
     player1Wins.innerText = `Wins: ${newGame.player1.wins}`;
     winnerDraw.innerText = `Player ${newGame.player1.token} wins!`
@@ -60,6 +60,7 @@ function win(){
   }
 }
 
-function draw(){
+function displayDraw(){
+    winnerDraw.innerText = `It's a cats game`
 
-}
+  }
