@@ -12,7 +12,15 @@ var winnerDraw = document.querySelector(".win-draw");
 
 gameGrid.addEventListener('click', switchPlayer);
 
-
+function switchPlayer(e) {
+    // newGame.makeMove(e)
+    mark(e)
+    if (!newGame.whosTurn){
+    whosTurn.innerHTML = `<h3 id="playerTurn" class="player1-turn">It's ${newGame.player1.token}'s turn </h3>`
+  } else {
+    whosTurn.innerHTML = `<h3 id="playerTurn" class="player2-turn">It's ${newGame.player2.token}'s turn </h3>`
+  }
+}
 
 function mark(e){
   for (var i in boxes){
