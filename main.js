@@ -12,6 +12,15 @@ var winnerDraw = document.querySelector(".win-draw");
 
 gameGrid.addEventListener('click', play1);
 
+
+function play1(e) {
+    newGame.makeMove(e)
+    mark(e)
+    switchPlayer(e)
+    displayWin()
+
+  }
+
 function switchPlayer(e) {
     // newGame.makeMove(e)
     // mark(e)
@@ -22,11 +31,7 @@ function switchPlayer(e) {
   }
 }
 
-function play1(e) {
-    newGame.makeMove(e)
-    mark(e)
-    switchPlayer(e)
-  }
+
 
 function mark(e){
   for (var i in boxes){
@@ -55,11 +60,11 @@ function displayReset(){
   }
 
 function displayWin(){
-  if (!newGame.whosTurn){
+  if (!newGame.whosTurn && newGame.win(newGame.player1)){
     player1Wins.innerText = `Wins: ${newGame.player1.wins}`;
     winnerDraw.innerText = `Player ${newGame.player1.token} wins!`
 
-  } else {
+  } else if (!newGame.whosTurn && newGame.win(newGame.player2)){
     player2Wins.innerText = `Wins: ${newGame.player2.wins}`;
     winnerDraw.innerText = `Player ${newGame.player2.token} wins!`
 
@@ -67,6 +72,7 @@ function displayWin(){
 }
 
 function displayDraw(){
-    winnerDraw.innerText = `It's a cats game`
+  newGame.draw()
+  winnerDraw.innerText = `It's a cats game`
 
-  }
+}
