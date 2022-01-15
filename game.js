@@ -14,16 +14,6 @@ class Game {
                   0,0,0]
   }
 
-  makeMove(e) {
-      if (!this.whosTurn ) {
-        this.player1.play(e)
-        this.whosTurn += 1;
-      }
-      else if (this.whosTurn)  {
-        this.player2.play(e)
-        this.whosTurn = 0;
-      }
-    }
 
   win(player){
     if ((this.board[0] === player.id && this.board[1] === player.id && this.board[2] === player.id)

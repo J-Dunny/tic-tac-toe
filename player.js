@@ -5,11 +5,4 @@ class Player {
     this.wins = 0;
   }
 
-  play(e){
-    for (var i in newGame.board){
-      if (e.target.id === i){
-        newGame.board[i] = this.id
-      }
-    }
-  }
 }
