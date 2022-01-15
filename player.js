@@ -11,6 +11,5 @@ class Player {
         newGame.board[i] = this.id
       }
     }
-
-    }
+  }
 }

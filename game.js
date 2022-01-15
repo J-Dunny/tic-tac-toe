@@ -18,14 +18,10 @@ class Game {
       if (!this.whosTurn ) {
         this.player1.play(e)
         this.whosTurn += 1;
-        console.log(e.target.id)
-        console.log("player1")
       }
       else if (this.whosTurn)  {
         this.player2.play(e)
         this.whosTurn = 0;
-        console.log("player2")
-        console.log(e.target.id)
       }
     }
 
@@ -40,7 +36,6 @@ class Game {
     || (this.board[0] === player.id && this.board[4] === player.id && this.board[8] === player.id)){
 
       player.wins += 1;
-
       return 1
 
     } else {
@@ -51,7 +46,6 @@ class Game {
   draw(){
     if (!newGame.board.includes(0)){
       return 1
-
     }
     else{
       return 0
