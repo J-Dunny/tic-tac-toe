@@ -1,6 +1,5 @@
 var newGame = new Game;
 
-
 var gameGrid = document.querySelector(".grid-section");
 var whosTurn = document.querySelector(".whos-turn");
 var playerTurn = document.querySelector("#playerTurn");
@@ -10,11 +9,18 @@ var player1Wins = document.querySelector(".player-1-wins");
 var player2Wins = document.querySelector(".player-2-wins");
 var winnerDraw = document.querySelector(".win-draw");
 
-gameGrid.addEventListener('click', switchPlayer);
+gameGrid.addEventListener('click', gameOn);
 
-function switchPlayer(e) {
+function gameOn(e) {
     newGame.makeMove(e)
     mark(e)
+    switchPlayer(e)
+    displayWin()
+    displayDraw()
+
+  }
+
+function switchPlayer(e) {
     if (!newGame.whosTurn){
     whosTurn.innerHTML = `<h3 id="playerTurn" class="player1-turn">It's ${newGame.player1.token}'s turn </h3>`
   } else {
@@ -49,18 +55,21 @@ function displayReset(){
   }
 
 function displayWin(){
-  if (!newGame.whosTurn){
+  if (newGame.win(newGame.player1)){
     player1Wins.innerText = `Wins: ${newGame.player1.wins}`;
     winnerDraw.innerText = `Player ${newGame.player1.token} wins!`
+    setTimeout('displayReset()', 1500)
 
-  } else {
+  } else if (newGame.win(newGame.player2)){
     player2Wins.innerText = `Wins: ${newGame.player2.wins}`;
     winnerDraw.innerText = `Player ${newGame.player2.token} wins!`
-
+    setTimeout('displayReset()', 1500)
   }
 }
 
 function displayDraw(){
+  if (newGame.draw()){
     winnerDraw.innerText = `It's a cats game`
-
+    setTimeout('displayReset()', 1500)
   }
+}
