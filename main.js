@@ -12,37 +12,31 @@ var winnerDraw = document.querySelector(".win-draw");
 gameGrid.addEventListener('click', gameOn);
 
 function gameOn(e) {
-    newGame.makeMove(e)
     mark(e)
-    switchPlayer(e)
     displayWin()
     displayDraw()
-
   }
+
+function mark(e){
+  for (var i in boxes){
+    if (boxes[i].id == i && e.target.id == i && !newGame.whosTurn && boxes[i].innerHTML === '') {
+      newGame.makeMove(e)
+      boxes[i].innerHTML = newGame.player1.token
+    }
+
+    else if (boxes[i].id == i && e.target.id == i && newGame.whosTurn && boxes[i].innerHTML === '') {
+      newGame.makeMove(e)
+      boxes[i].innerHTML = newGame.player2.token
+    }
+  }
+  switchPlayer(e)
+}
 
 function switchPlayer(e) {
     if (!newGame.whosTurn){
     whosTurn.innerHTML = `<h3 id="playerTurn" class="player1-turn">It's ${newGame.player1.token}'s turn </h3>`
   } else {
     whosTurn.innerHTML = `<h3 id="playerTurn" class="player2-turn">It's ${newGame.player2.token}'s turn </h3>`
-  }
-}
-
-function mark(e){
-  for (var i in boxes){
-    if (boxes[i].id == i && e.target.id == i && newGame.whosTurn && boxes[i].innerHTML === '') {
-      boxes[i].innerHTML = newGame.player1.token
-      // newGame.makeMove(e)
-      // boxes[i].disabled = true;
-      // boxes[i].classList.add('disabled')
-    }
-    if (boxes[i].id == i && e.target.id == i && !newGame.whosTurn && boxes[i].innerHTML === '') {
-      boxes[i].innerHTML = newGame.player2.token
-      // newGame.makeMove(e)
-      // boxes[i].classList.add('disabled')
-      // boxes[i].disabled = true;
-    }
-
   }
 }
 
