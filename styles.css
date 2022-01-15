@@ -60,11 +60,10 @@ body {
   display:flex;
   align-items: center;
   justify-content: center;
-  /* height: 120px; */
   height: 14vh;
   width: 11vw;
   font-size: 8vw;
-  /* border: solid red 1px; */
+  cursor: pointer;
 }
 
 .box-0 {
