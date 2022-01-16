@@ -91,6 +91,7 @@ function blockEmptyBoxes(){
   for (var i in boxes){
     if (boxes[i].innerHTML === '') {
       boxes[i].innerHTML = `<p class ="emptyBox">empty</p>`
+      // gameGrid.removeEventListener('click', gameOn);
     }
   }
 }
@@ -108,4 +109,5 @@ function displayReset(){
       boxes[i].innerHTML = '';
     }
     whosTurn.innerHTML = `<h3 id="playerTurn" class="player1-turn">It's ${newGame.player1.token}'s turn </h3>`
+    // gameGrid.addEventListener('click', gameOn);
   }

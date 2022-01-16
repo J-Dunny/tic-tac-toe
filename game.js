@@ -27,7 +27,6 @@ class Game {
     }
   }
 
-
   draw(){
     if (!newGame.board.includes(0)){
       return true

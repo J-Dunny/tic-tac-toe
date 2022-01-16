@@ -25,7 +25,8 @@ p {
 }
 
 .fire,
-.ice {
+.ice
+{
   font-size: 10vw;
 }
 
@@ -60,6 +61,14 @@ p {
   width: 11vw;
   font-size: 9vh;
   cursor: pointer;
+  transition: .5s;
+}
+.box:hover{
+  /* content: 😀; */
+  /* background-color: black; */
+  transform: scale(.9);
+  /* background-image: 😀 ; */
+
 }
 
 .box-0 {
