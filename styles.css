@@ -8,6 +8,10 @@ body {
   display: flex;
   height: 100vh;
 }
+p {
+  color:blue;
+  font-size: 1px;
+}
 
 /* img {
   background-color: black;

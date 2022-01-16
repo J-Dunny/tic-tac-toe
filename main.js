@@ -13,11 +13,14 @@ var winnerDraw = document.querySelector(".win-draw");
 gameGrid.addEventListener('click', gameOn);
 
 function gameOn(e) {
-    mark(e)
-    switchPlayer()
-    displayDraw()
-    displayWin()
+  for (var i in boxes){
+    if (boxes[i].innerHTML === ''){
+      mark(e)
+      displayDraw()
+      displayWin()
+    }
   }
+}
 
 function updateBoard(e, player){
     for (var i in newGame.board){
@@ -47,11 +50,15 @@ function mark(e){
     if (boxes[i].id == i && e.target.id == i && !newGame.whosTurn && boxes[i].innerHTML === '') {
       makeMove(e)
       boxes[i].innerHTML = newGame.player1.token
+      switchPlayer()
+
     }
 
     else if (boxes[i].id == i && e.target.id == i && newGame.whosTurn && boxes[i].innerHTML === '') {
       makeMove(e)
       boxes[i].innerHTML = newGame.player2.token
+      switchPlayer()
+
     }
   }
   // switchPlayer()
@@ -74,6 +81,7 @@ function displayWin(){
     player1Wins.innerText = `Wins: ${newGame.player1.wins}`;
     whosTurn.innerHTML  = `<h3 id="playerTurn" class="player1-turn"> ${newGame.player1.token}  WINS! </h3>`
     setTimeout('displayReset()', 2000)
+    blockEmptyBoxes()
     console.log("player1 wins")
 
   }
@@ -81,7 +89,16 @@ function displayWin(){
     player2Wins.innerText = `Wins: ${newGame.player2.wins}`;
     whosTurn.innerHTML  = `<h3 id="playerTurn" class="player1-turn"> ${newGame.player2.token}  WINS! </h3>`
     setTimeout('displayReset()', 2000)
+    blockEmptyBoxes()
     console.log("player2 wins")
+  }
+}
+
+function blockEmptyBoxes(){
+  for (var i in boxes){
+    if (boxes[i].innerHTML === '') {
+      boxes[i].innerHTML = `<p class ="emptyBox">empty</p>`
+    }
   }
 }
 
