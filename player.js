@@ -3,13 +3,8 @@ class Player {
     this.id = id;
     this.token = token;
     this.wins = 0;
+    this.plays = [];
   }
 
-  play(e){
-    for (var i in newGame.board){
-      if (e.target.id === i){
-        newGame.board[i] = this.id
-      }
-    }
-  }
+
 }
