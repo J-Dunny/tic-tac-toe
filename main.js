@@ -14,27 +14,31 @@ gameGrid.addEventListener('click', gameOn);
 
 function gameOn(e) {
     mark(e)
+    switchPlayer()
     displayDraw()
     displayWin()
-
   }
 
-function changeBoard(e, player){
+function updateBoard(e, player){
     for (var i in newGame.board){
       if (e.target.id === i){
         newGame.board[i] = player.id
+        player.plays.push(parseInt(i))
       }
+
+      // console.log(newGame.wins[i])
     }
+    console.log(player.plays)
   }
 
 function  makeMove(e) {
       if (!newGame.whosTurn ) {
-        changeBoard(e, newGame.player1)
-        newGame.whosTurn += 1;
+        updateBoard(e, newGame.player1)
+        // newGame.whosTurn += 1;
       }
       else if (newGame.whosTurn)  {
-        changeBoard(e, newGame.player2)
-        newGame.whosTurn = 0;
+        updateBoard(e, newGame.player2)
+        // newGame.whosTurn = 0;
       }
     }
 
@@ -50,16 +54,42 @@ function mark(e){
       boxes[i].innerHTML = newGame.player2.token
     }
   }
-  switchPlayer()
+  // switchPlayer()
 }
 
 function switchPlayer() {
-    if (!newGame.whosTurn){
+  newGame.whosTurn = !newGame.whosTurn
+
+  if (!newGame.whosTurn){
     whosTurn.innerHTML = `<h3 id="playerTurn" class="player1-turn">It's ${newGame.player1.token}'s turn </h3>`
   } else {
     whosTurn.innerHTML = `<h3 id="playerTurn" class="player2-turn">It's ${newGame.player2.token}'s turn </h3>`
   }
-  // newGame.whosTurn = !newGame.whosTurn
+
+}
+
+function displayWin(){
+
+  if (newGame.win('player1')){
+    player1Wins.innerText = `Wins: ${newGame.player1.wins}`;
+    whosTurn.innerHTML  = `<h3 id="playerTurn" class="player1-turn"> ${newGame.player1.token}  WINS! </h3>`
+    setTimeout('displayReset()', 2000)
+    console.log("player1 wins")
+
+  }
+  if (newGame.win('player2')){
+    player2Wins.innerText = `Wins: ${newGame.player2.wins}`;
+    whosTurn.innerHTML  = `<h3 id="playerTurn" class="player1-turn"> ${newGame.player2.token}  WINS! </h3>`
+    setTimeout('displayReset()', 2000)
+    console.log("player2 wins")
+  }
+}
+
+function displayDraw(){
+  if (newGame.draw()){
+    whosTurn.innerHTML = `<h3 id="playerTurn" class="cats-game">It's a cat's game</h3>`
+    setTimeout('displayReset()', 2000)
+  }
 }
 
 function displayReset(){
@@ -70,23 +100,3 @@ function displayReset(){
     winnerDraw.innerText = ``;
     whosTurn.innerHTML = `<h3 id="playerTurn" class="player1-turn">It's ${newGame.player1.token}'s turn </h3>`
   }
-
-function displayWin(){
-  if (newGame.win(newGame.player1)){
-    player1Wins.innerText = `Wins: ${newGame.player1.wins}`;
-    whosTurn.innerHTML  = `<h3 id="playerTurn" class="player1-turn"> ${newGame.player1.token}  WINS! </h3>`
-    setTimeout('displayReset()', 2000)
-
-  } else if (newGame.win(newGame.player2)){
-    player2Wins.innerText = `Wins: ${newGame.player2.wins}`;
-    whosTurn.innerHTML  = `<h3 id="playerTurn" class="player1-turn"> ${newGame.player2.token}  WINS! </h3>`
-    setTimeout('displayReset()', 2000)
-  }
-}
-
-function displayDraw(){
-  if (newGame.draw()){
-    whosTurn.innerHTML = `<h3 id="playerTurn" class="cats-game">It's a cat's game</h3>`
-    setTimeout('displayReset()', 2000)
-  }
-}
