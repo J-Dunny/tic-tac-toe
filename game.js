@@ -13,8 +13,8 @@ class Game {
     this.board = [0,0,0,
                   0,0,0,
                   0,0,0]
-    this.player1.plays = [];
-    this.player2.plays = [];
+    newGame.player1.plays = [];
+    newGame.player2.plays = [];
   }
 
   // play(player){
@@ -32,6 +32,7 @@ class Game {
     // || (this.board[0] === player.id && this.board[4] === player.id && this.board[8] === player.id)){
     for (var i in this.wins){
       if(this.wins[i].every(element => this[player].plays.includes(element))){
+        this[player].wins += 1;
         return true
       }
       // else {
