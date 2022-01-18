@@ -93,7 +93,7 @@ function blockEmptyBoxes(){
 
 function displayDraw(){
   if (newGame.draw()){
-    whosTurn.innerHTML = `<h3 id="playerTurn" class="cats-game">It's a cat's game</h3>`
+    whosTurn.innerHTML = `<h3 id="playerTurn" class="cats-game">It's a Draw</h3>`
     setTimeout('displayReset()', 2000)
   }
 }
