@@ -20,7 +20,7 @@ class Game {
 
   win(player){
     for (var i in this.wins){
-      if(this.wins[i].every(element => this[player].plays.includes(element))){
+      if(this.wins[i].every(winCombo => this[player].plays.includes(winCombo))){
         this[player].wins += 1;
 
         return true
