@@ -3,8 +3,8 @@ var newGame = new Game;
 var gameGrid = document.querySelector(".grid-section");
 var whosTurn = document.querySelector(".whos-turn");
 var playerTurn = document.querySelector("#playerTurn");
-var player1Turn = document.querySelector(".player1-turn");
-var player2Turn = document.querySelector(".player2-turn");
+// var player1Turn = document.querySelector(".player1-turn");
+// var player2Turn = document.querySelector(".player2-turn");
 var boxes = document.querySelectorAll(".box");
 var player1Wins = document.querySelector(".player-1-wins");
 var player2Wins = document.querySelector(".player-2-wins");
@@ -108,6 +108,7 @@ function displayReset(){
     for (var i in boxes){
       boxes[i].innerHTML = '';
     }
+    newGame.whosTurn = 0;
     whosTurn.innerHTML = `<h3 id="playerTurn" class="player1-turn">It's ${newGame.player1.token}'s turn </h3>`
     // gameGrid.addEventListener('click', gameOn);
   }

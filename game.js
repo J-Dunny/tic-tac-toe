@@ -12,9 +12,10 @@ class Game {
   reset() {
     this.board = [0,0,0,
                   0,0,0,
-                  0,0,0]
-    newGame.player1.plays = [];
-    newGame.player2.plays = [];
+                  0,0,0];
+    this.whosTurn = 0;
+    this.player1.plays = [];
+    this.player2.plays = [];
   }
 
   win(player){
