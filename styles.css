@@ -17,15 +17,16 @@ p {
   font-size: 5vw;
 }
 
-.player1-turn,
-.player2-turn,
+.player-1-turn,
+.player-2-turn,
 .cats-game,
 .win-draw {
   font-size: 3.3vw;
 }
 
 .fire,
-.ice {
+.ice
+{
   font-size: 10vw;
 }
 
@@ -60,6 +61,14 @@ p {
   width: 11vw;
   font-size: 9vh;
   cursor: pointer;
+  transition: .5s;
+}
+.box:hover{
+  /* content: 😀; */
+  /* background-color: black; */
+  transform: scale(.9);
+  /* background-image: 😀 ; */
+
 }
 
 .box-0 {
