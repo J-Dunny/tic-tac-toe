@@ -32,8 +32,8 @@ function updateBoard(e, player) {
 function  makeMove(e) {
   if (!newGame.whosTurn ) {
     updateBoard(e, newGame.player1);
-  }
-  else if (newGame.whosTurn)  {
+
+  } else if (newGame.whosTurn)  {
     updateBoard(e, newGame.player2);
   }
 }
