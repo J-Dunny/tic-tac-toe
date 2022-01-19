@@ -19,7 +19,7 @@ class Game {
   }
 
   win(player) {
-    for (var i in this.wins){
+    for (var i in this.wins) {
       if(this.wins[i].every(winCombo => this[player].plays.includes(winCombo))) {
         this[player].wins += 1;
 
@@ -31,8 +31,7 @@ class Game {
   draw() {
     if (!newGame.board.includes(0)) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }
