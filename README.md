@@ -16,7 +16,7 @@
 !["reset board"](https://media.giphy.com/media/QW5t4x5SLbe6p2PUZz/giphy.gif)
 ## Future Features:
 
-* On hover the icons will be faintly be displayed in the box before clicking.
+* On hover the icons will be faintly displayed in the box before clicking.
 * An animation will be added for a fiery or icy win!
 
 ## Contributors:
