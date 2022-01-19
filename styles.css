@@ -24,6 +24,11 @@ p {
   font-size: 3.3vw;
 }
 
+.player-2-wins,
+.player-1-wins {
+  font-size: 2vw;
+}
+
 .fire,
 .ice
 {
