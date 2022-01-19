@@ -1,4 +1,4 @@
-html{
+html {
   text-align: center;
 }
 
@@ -13,7 +13,7 @@ p {
   font-size: 1px;
 }
 
-.title{
+.title {
   font-size: 5vw;
 }
 
@@ -30,8 +30,7 @@ p {
 }
 
 .fire,
-.ice
-{
+.ice {
   font-size: 10vw;
 }
 
@@ -58,7 +57,7 @@ p {
   justify-content: center;
 }
 
-.box{
+.box {
   display:flex;
   align-items: center;
   justify-content: center;
@@ -68,12 +67,9 @@ p {
   cursor: pointer;
   transition: .5s;
 }
-.box:hover{
-  /* content: 😀; */
-  /* background-color: black; */
-  transform: scale(.9);
-  /* background-image: 😀 ; */
 
+.box:hover {
+  transform: scale(.9);
 }
 
 .box-0 {
