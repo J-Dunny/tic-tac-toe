@@ -13,11 +13,11 @@
 
 * This website was created using javascript and allows users to play a simple game of tic-tac-toe with a little fire and ice theme.
 * One of the harder things about the tic-tac-toe challenge was to create DRY (Don't Repeat Yourself) code for the data model of how the wins were being accounted for.  
-* There are 8 different ways in which a player could win. So I created a game board that is an array of 0's corresponding to the places in which a player can move on the screen. When a player moves on the screen that corresponding place in the array will change to the players ID. When a win condition is met then that player will win.
+* There are 8 different ways in which a player could win. So I created a game board that is an array of zeros corresponding to the places in which a player can move on the screen. When a player moves on the screen that corresponding place in the array will change to the players ID. When a win condition is met then that player will win.
 
 !["game board"](./assets/gameClass.png)
 
-* I created a method, 4 lines of code long, that can iterate through the win conditions and check to see if either player meets any of the win criteria.
+* I created a method that can iterate through the win conditions and check to see if either player meets any of the win criteria.
 
 !["game board" ](./assets/winMethod.png)
 
@@ -39,9 +39,3 @@
 
 ## Contributors:
 Jake Dunafon https://github.com/J-Dunny
-
-## Links:
-
-Repo link: https://github.com/J-Dunny/tic-tac-toe
-
-Deploy link:  https://j-dunny.github.io/tic-tac-toe/
