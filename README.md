@@ -39,3 +39,9 @@
 
 ## Contributors:
 Jake Dunafon https://github.com/J-Dunny
+
+## Links:
+
+Repo link: https://github.com/J-Dunny/tic-tac-toe
+
+Deploy link:  https://j-dunny.github.io/tic-tac-toe/
